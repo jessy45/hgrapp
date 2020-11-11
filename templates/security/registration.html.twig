@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <body class="hold-transition login-page">
+        <div class="login-box">
+            <div class="login-logo">
+                <a href="../../index2.html"><b>MWANGEJI </b>HGR</a>
+            </div>
+            <!-- /.login-logo -->
+            <div class="card">
+                <div class="card-body login-card-body">
+                    <p class="login-box-msg">Creer un compte</p>
+                    {{ form_start(form) }}
+                        <div class="input-group mb-3">
+                            {{ form_row(form.username, {"attr":{"placeholder":"Username", "class":"form-control"}}) }}
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-user"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            {{ form_start(form) }}
+                            {{ form_row(form.email, {"attr":{"placeholder":"Email"}}) }}
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-envelope"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            {{ form_start(form) }}
+                            {{ form_row(form.password, {"attr":{"placeholder":"Password"}}) }}
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-lock"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            {{ form_start(form) }}
+                            {{ form_row(form.confirm_password, {"attr":{"placeholder":"Password Confirm"}}) }}
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-lock"></span>
+                                </div>
+                            </div>
+                        </div>
+                    <button class="btn btn-primary btn-sm">ENREGISTRER</button>
+                        {{ form_end(form) }}
+                        <div class="row">
+                            <!-- /.col -->
+                            <div class="col-6">
+                            <!-- /.col -->
+                        </div>
+                </div>
+                <!-- /.login-card-body -->
+            </div>
+        </div>
+    </div>
+{% endblock %}

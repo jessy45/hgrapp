@@ -1,0 +1,181 @@
+{% include "extension/sidebar.html.twig" %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Creer une Fiche</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                        <li class="breadcrumb-item active">Creer une fiche</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <!-- /.col -->
+            <div class="container-fluid">
+                <h6>Type de patient</h6>
+                <ul class="nav nav-tabs" id="custom-content-below-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="custom-content-below-home-tab" data-toggle="pill" href="#custom-content-below-home" role="tab" aria-controls="custom-content-below-home" aria-selected="true">Particulier</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="custom-content-below-profile-tab" data-toggle="pill" href="#custom-content-below-profile" role="tab" aria-controls="custom-content-below-profile" aria-selected="false">Abonne</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="custom-content-below-tabContent">
+                    <div class="tab-pane fade show active" id="custom-content-below-home" role="tabpanel" aria-labelledby="custom-content-below-home-tab">
+                        <!-- FORMULAIRE DE CONSULTATION -->
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <h3 class="card-title">AFFECTER UN PERSONNEL</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                                    <!--              <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>-->
+                                </div>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">Nom Complet</label>
+                                            <input type="text" class="form-control"  placeholder="Nom & Post-nom">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="">Lieu de naissance</label>
+                                                    <input type="text" class="form-control"  placeholder="Lieu de naissance">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="">Date de naissance</label>
+                                                    <input type="date" class="form-control"  placeholder="Date de naissance">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Sexe</label>
+                                            <select name="" class="form-control">
+                                                <option value="">Masculin</option>
+                                                <option value="">Feminin</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Adresse</label>
+                                            <input type="text" class="form-control" placeholder="Adresse">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Numero telephone</label>
+                                            <input type="text" class="form-control"  placeholder="Numero tel.">
+                                        </div>
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">Adresse</label>
+                                            <input type="text" class="form-control" placeholder="Adresse">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="custom-content-below-profile" role="tabpanel" aria-labelledby="custom-content-below-profile-tab">
+                        <!-- FORMULAIRE DE CONSULTATION -->
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <h3 class="card-title">FICHE DE CONSULTATION</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                                    <!--              <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>-->
+                                </div>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">Nom Complet</label>
+                                            <input type="text" class="form-control"  placeholder="Nom & Post-nom">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="">Lieu de naissance</label>
+                                                    <input type="text" class="form-control"  placeholder="Lieu de naissance">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="">Date de naissance</label>
+                                                    <input type="date" class="form-control" id="" placeholder="Date de naissance">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Sexe</label>
+                                            <select name="" class="form-control">
+                                                <option value="">Masculin</option>
+                                                <option value="">Feminin</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Adresse</label>
+                                            <input type="text" class="form-control" placeholder="Adresse">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Numero telephone</label>
+                                            <input type="text" class="form-control"  placeholder="Numero tel.">
+                                        </div>
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="">Matricule</label>
+                                                    <input type="text" class="form-control" placeholder="Adresse">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="">Profession</label>
+                                                    <input type="text" class="form-control" placeholder="Profession">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Service</label>
+                                            <input type="text" class="form-control" placeholder="Service">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+
+    <a id="back-to-top" href="#" class="btn btn-primary back-to-top" role="button" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+</div>
+<!-- /.content-wrapper -->
+{% include "/extension/footer.html.twig" %}

@@ -1,0 +1,394 @@
+{% include "extension/sidebar.html.twig" %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>CONFIGURATION</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                        <li class="breadcrumb-item active">Affecter un agent</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <!-- /.col -->
+            <div class="container-fluid">
+
+{#Setting list function and list grade#}
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="tab-content" id="custom-content-below-tabContent">
+                            <div class="tab-pane fade show active" id="custom-content-below-home" role="tabpanel" aria-labelledby="custom-content-below-home-tab">
+                                <!-- FORMULAIRE DE CONSULTATION -->
+                                <div class="card card-default">
+                                    <div class="card-header">
+                                        <h3 class="card-title">LISTE FONCTION</h3>
+                                        <div class="card-tools">
+                                            <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal1">AJOUTER</button>
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                                            <!--              <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>-->
+                                        </div>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+                                        <div class="row">
+                                          <div class="col-md-12">
+                                              <div class="card">
+                                                      <!-- /.card-header -->
+                                                  <!-- /.card-header -->
+                                                  <div class="card-body p-0">
+                                                      <table class="table table-striped">
+                                                          <thead>
+                                                          <tr>
+                                                              <th style="width: 10px">N°</th>
+                                                              <th>Description</th>
+                                                              <th style="width: 20px;" class="text-center">Editer</th>
+                                                              <th style="width: 20px" class="text-center">Supprimer</th>
+                                                          </tr>
+                                                          </thead>
+                                                          <tbody>
+                                                          {% for fonction in fonctions %}
+                                                          <tr>
+                                                              <td>{{ fonction.id }}</td>
+                                                              <td>{{ fonction.nom }}</td>
+                                                              <td class="text-center">
+                                                                  <a class="text-center" type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                                                                      <i class="fas fa-edit text-blue"></i>
+                                                                  </a>
+                                                              </td>
+                                                              <td class="text-center">
+                                                                  <a class="text-center" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-default">
+                                                                      <i class="fas fa-eyes text-danger"></i>
+                                                                  </a>
+                                                              </td>
+                                                          </tr>
+                                                          {% endfor %}
+                                                          </tbody>
+                                                      </table>
+                                                  </div>
+                                                  <!-- /.card-body -->
+                                              </div>
+                                              <!-- /.card -->
+
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="tab-content" id="custom-content-below-tabContent">
+                            <div class="tab-pane fade show active" id="custom-content-below-home" role="tabpanel" aria-labelledby="custom-content-below-home-tab">
+                                <!-- FORMULAIRE DE CONSULTATION -->
+
+                                <div class="card card-default">
+                                    <div class="card-header">
+                                        <h3 class="card-title">LISTE GRADE</h3>
+                                        <div class="card-tools">
+                                            <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-default">AJOUTER</button>
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                                            <!--              <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>-->
+                                        </div>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="card">
+                                                    <!-- /.card-header -->
+                                                    <div class="card-body p-0">
+                                                        <table class="table table-striped">
+                                                            <thead>
+                                                            <tr>
+                                                                <th style="width: 10px">N°</th>
+                                                                <th>Description</th>
+                                                                <th style="width: 20px;" class="text-center">Editer</th>
+                                                                <th style="width: 20px" class="text-center">Supprimer</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            {% for grade in grades %}
+                                                                <tr>
+                                                                    <td>{{ grade.id }}</td>
+                                                                    <td>{{ grade.nom }}</td>
+                                                                    <td class="text-center">
+                                                                        <a class="text-center" type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                                                                            <i class="fas fa-edit text-blue"></i>
+                                                                        </a>
+                                                                    </td>
+                                                                    <td class="text-center">
+                                                                        <a class="text-center" type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal1">
+                                                                            <i class="fas fa-trash text-danger"></i>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            {% endfor %}
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <!-- /.card-body -->
+                                                </div>
+                                                <!-- /.card -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+{#                Setting list function and grade list#}
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="tab-content" id="custom-content-below-tabContent">
+                            <div class="tab-pane fade show active" id="custom-content-below-home" role="tabpanel" aria-labelledby="custom-content-below-home-tab">
+                                <!-- FORMULAIRE DE CONSULTATION -->
+                                <div class="card card-default">
+                                    <div class="card-header">
+                                        <h3 class="card-title">LISTE GENRE</h3>
+                                        <div class="card-tools">
+                                            <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal2">AJOUTER</button>
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                                            <!--              <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>-->
+                                        </div>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="card">
+                                                    <!-- /.card-header -->
+                                                    <!-- /.card-header -->
+                                                    <div class="card-body p-0">
+                                                        <table class="table table-striped">
+                                                            <thead>
+                                                            <tr>
+                                                                <th style="width: 10px">N°</th>
+                                                                <th>Description</th>
+                                                                <th style="width: 20px;" class="text-center">Editer</th>
+                                                                <th style="width: 20px" class="text-center">Supprimer</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            {% for stat in status %}
+                                                                <tr>
+                                                                    <td>{{ stat.id }}</td>
+                                                                    <td>{{ stat.description }}</td>
+                                                                    <td class="text-center">
+                                                                        <a class="text-center" type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                                                                            <i class="fas fa-edit text-blue"></i>
+                                                                        </a>
+                                                                    </td>
+                                                                    <td class="text-center">
+                                                                        <a class="text-center" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-default">
+                                                                            <i class="fas fa-trash text-danger"></i>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            {% endfor %}
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <!-- /.card-body -->
+                                                </div>
+                                                <!-- /.card -->
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="tab-content" id="custom-content-below-tabContent">
+                            <div class="tab-pane fade show active" id="custom-content-below-home" role="tabpanel" aria-labelledby="custom-content-below-home-tab">
+                                <!-- FORMULAIRE DE CONSULTATION -->
+                                <div class="card card-default">
+                                    <div class="card-header">
+                                        <h3 class="card-title">LISTE STATUS MATRIMONIAL</h3>
+                                        <div class="card-tools">
+                                            <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal1">AJOUTER</button>
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                                            <!--              <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>-->
+                                        </div>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="card">
+                                                    <!-- /.card-header -->
+                                                    <!-- /.card-header -->
+                                                    <div class="card-body p-0">
+                                                        <table class="table table-striped">
+                                                            <thead>
+                                                            <tr>
+                                                                <th style="width: 10px">N°</th>
+                                                                <th>Description</th>
+                                                                <th style="width: 20px;" class="text-center">Editer</th>
+                                                                <th style="width: 20px" class="text-center">Supprimer</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            {% for etudes in etude %}
+                                                                <tr>
+                                                                    <td>{{ etudes.id }}</td>
+                                                                    <td>{{ etudes.nom }}</td>
+                                                                    <td class="text-center">
+                                                                        <a class="text-center" type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                                                                            <i class="fas fa-edit text-blue"></i>
+                                                                        </a>
+                                                                    </td>
+                                                                    <td class="text-center">
+                                                                        <a class="text-center" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-default">
+                                                                            <i class="fas fa-trash text-danger"></i>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            {% endfor %}
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <!-- /.card-body -->
+                                                </div>
+                                                <!-- /.card -->
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+{#                                    Modals grade#}
+
+                <div class="modal fade" id="modal-default">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Ajouter un grade</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            {{ form_start(formGrade) }}
+                                            {{ form_row(formGrade.nom) }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                                <button class="btn btn-primary">Valider</button>
+                            </div>
+                            {{ form_end(formGrade) }}
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+                <!-- /.modal -->
+{#                Grade#}
+
+{#                Model Fonction#}
+                <div class="modal fade" id="myModal1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Ajouter une fonction</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            {{ form_start(formConfig) }}
+                                            {{ form_row(formConfig.nom) }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                                <button class="btn btn-primary">Valider</button>
+                            </div>
+                            {{ form_end(formConfig) }}
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+{#                Model Fonction#}
+
+
+                {#                Model Status#}
+                <div class="modal fade" id="myModal3">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Ajouter Etude</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            {{ form_start(formEtude) }}
+                                            {{ form_row(formEtude.description) }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                                <button class="btn btn-primary">Valider</button>
+                            </div>
+                            {{ form_end(formStatus) }}
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+{#                Model Status#}
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+
+    <a id="back-to-top" href="#" class="btn btn-primary back-to-top" role="button" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+</div>
+<!-- /.content-wrapper -->
+{% include "/extension/footer.html.twig" %}
