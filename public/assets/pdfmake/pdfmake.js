@@ -36808,7 +36808,7 @@ var hmtx = new r.Struct({
   })
 });
 
-// maxiumum profile
+// maxiumum profile.html.twig
 var maxp = new r.Struct({
   version: r.int32,
   numGlyphs: r.uint16, // The number of glyphs in the font

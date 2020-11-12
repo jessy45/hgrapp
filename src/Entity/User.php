@@ -42,6 +42,10 @@ class User implements UserInterface
     */
     public $confirm_password;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Personnel::class, cascade={"persist", "remove"})
+     */
+    private $personnel;
 
 
     public function getEmail(): ?string
@@ -93,6 +97,18 @@ class User implements UserInterface
     public function eraseCredentials()
     {
         // TODO: Implement eraseCredentials() method.
+
     }
 
+    public function getPersonnel(): ?Personnel
+    {
+        return $this->personnel;
+    }
+
+    public function setPersonnel(?Personnel $personnel): self
+    {
+        $this->personnel = $personnel;
+
+        return $this;
+    }
 }

@@ -2,7 +2,9 @@
 
 namespace App\Form;
 
+use App\Entity\Personnel;
 use App\Entity\User;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -17,6 +19,7 @@ class RegistrationType extends AbstractType
             ->add('username', null, ['label'=>false])
             ->add('password', PasswordType::class, ['label'=>false])
             ->add('confirm_password',PasswordType::class, ['label'=>false])
+            ->add('personnel',EntityType::class, ['class'=>Personnel::class, 'choice_label'=>'nomComplet'])
         ;
     }
 

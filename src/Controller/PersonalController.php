@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Personnel;
 use App\Form\PersonnelType;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -45,9 +46,10 @@ class PersonalController extends AbstractController
     /**
      * @Route("view/personal", name="view_personal")
     */
-    public function viewPersonal(){
-        $formView = $this->getDoctrine()->getRepository(Personnel::class);
-        $personnels = $formView->findAll();
+    public function viewPersonal(Request $request,PaginatorInterface $paginator){
+        $formView = $this->getDoctrine()->getRepository(Personnel::class)->findAll();
+        $personnels = $paginator->paginate($formView,$request->query->getInt('page', 1), 3);
+//        $personnels = $formView->findAll();
 
         return $this->render('personal/view-personal', ['personnels'=>$personnels]);
     }
@@ -79,5 +81,12 @@ class PersonalController extends AbstractController
             'personnel'=>$personnel,
             'form'=>$form->createView()
         ]);
+    }
+
+    /**
+     * @Route("/personal/profile", name="profile")
+    */
+    public function viewProfil(){
+        return $this->render("/profile/profile.html.twig");
     }
 }
