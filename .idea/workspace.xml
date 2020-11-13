@@ -10,30 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb8b6ea8-7e0a-44a9-885f-1e09d16a2948" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/packages/knp_paginator.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/profile/profile.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/hgrproject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hgrproject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201111152146.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201111160451.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201111160829.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201111161207.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201111161335.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/pdfmake/pdfmake.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/pdfmake/pdfmake.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/PersonalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PersonalController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/extension/sidebar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/extension/sidebar.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/personal/view-personal" beforeDir="false" afterPath="$PROJECT_DIR$/templates/personal/view-personal" afterDir="false" />
-    </list>
+    <list default="true" id="fb8b6ea8-7e0a-44a9-885f-1e09d16a2948" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -219,7 +196,7 @@
       <workItem from="1605110226171" duration="2983000" />
       <workItem from="1605170778968" duration="6510000" />
       <workItem from="1605178435080" duration="804000" />
-      <workItem from="1605184537127" duration="7624000" />
+      <workItem from="1605184537127" duration="7962000" />
     </task>
     <servers />
   </component>
