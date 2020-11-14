@@ -4,6 +4,8 @@ namespace App\Repository;
 
 use App\Entity\Personnel;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\DBAL\Query\QueryBuilder;
+use Doctrine\ORM\Query;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -47,4 +49,19 @@ class PersonnelRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    /**
+     * @Return Query
+    */
+    public function findVisibleQuery():Query
+    {
+        return $this->findVisiblePersonal()
+                    ->getQuery();
+    }
+
+    public function findVisiblePersonal(): \Doctrine\ORM\QueryBuilder
+    {
+        return $this->createQueryBuilder('p')
+            ->where('p.genre=true');
+    }
 }

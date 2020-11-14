@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PersonalController!{% endblock %}
+
+{% block body %}
+    <h1 class="text-primary">Nouveau contact</h1>
+    {#{{ form_start(contactForm) }}#}
+    <p>Nom : {{contact.nom}}</p>
+    <p>e-mail : {{contact.email}}</p>
+    <p>Message : {{contact.message|raw}}</p>
+    {#{{ form_end(contactForm) }}#}
+{% endblock %}

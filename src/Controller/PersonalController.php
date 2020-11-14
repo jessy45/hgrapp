@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Personnel;
+use App\Form\CongeType;
 use App\Form\PersonnelType;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
@@ -47,7 +48,7 @@ class PersonalController extends AbstractController
      * @Route("view/personal", name="view_personal")
     */
     public function viewPersonal(Request $request,PaginatorInterface $paginator){
-        $formView = $this->getDoctrine()->getRepository(Personnel::class)->findAll();
+        $formView = $this->getDoctrine()->getRepository(Personnel::class)->findVisibleQuery();
         $personnels = $paginator->paginate($formView,$request->query->getInt('page', 1), 3);
 //        $personnels = $formView->findAll();
 
@@ -88,5 +89,43 @@ class PersonalController extends AbstractController
     */
     public function viewProfil(){
         return $this->render("/profile/profile.html.twig");
+    }
+
+    /**
+     * @Route("/personal/email", name="email")
+    */
+    public function index(Request $request, \Swift_Mailer $mailer){
+        $form = $this->createForm(CongeType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $contact = $form->getData();
+
+            // On crée le message
+            $message = (new \Swift_Message('Nouveau contact'))
+                // On attribue l'expéditeur
+//                ->setFrom($contact['email'])
+                // On attribue le destinataire
+                ->setTo('jessymukund@gmail.com')
+                // On crée le texte avec la vue
+                ->setBody(
+                    $this->renderView(
+                        'personal/contact.html.twig', compact('contact')
+                    ),
+                    'text/html'
+                )
+            ;
+            $mailer->send($message);
+
+            $this->addFlash('message', 'Votre message a été transmis, nous vous répondrons dans les meilleurs délais.'); // Permet un message flash de renvoi
+        }
+        return $this->render('personal/index.html.twig',['contactForm' => $form->createView()]);
+    }
+
+    /**
+     * @Route("/leave/personal", name="leave")
+    */
+    public function leaves(){
+        return $this->render('personal/leaves.html.twig');
     }
 }

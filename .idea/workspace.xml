@@ -10,7 +10,29 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb8b6ea8-7e0a-44a9-885f-1e09d16a2948" name="Default Changelist" comment="" />
+    <list default="true" id="fb8b6ea8-7e0a-44a9-885f-1e09d16a2948" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201113095631.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Conge.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/CongeType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/CongeRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/personal/contact.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/personal/leaves.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/hgrproject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hgrproject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/dev/web_profiler.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/dev/web_profiler.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PersonalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PersonalController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/PersonnelRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PersonnelRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/extension/sidebar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/extension/sidebar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/personal/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/personal/create.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/personal/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/personal/index.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -129,14 +151,20 @@
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
       <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/swiftmailer-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jBAjtOleClqwYmLZ9073UAAHrT" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/patient" />
@@ -197,6 +225,12 @@
       <workItem from="1605170778968" duration="6510000" />
       <workItem from="1605178435080" duration="804000" />
       <workItem from="1605184537127" duration="7962000" />
+      <workItem from="1605260028854" duration="1970000" />
+      <workItem from="1605262062213" duration="5093000" />
+      <workItem from="1605273598977" duration="4329000" />
+      <workItem from="1605342532921" duration="1553000" />
+      <workItem from="1605351914680" duration="2423000" />
+      <workItem from="1605374417901" duration="4586000" />
     </task>
     <servers />
   </component>
@@ -214,6 +248,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="365" y="200" width="626" height="398" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605175113380">
