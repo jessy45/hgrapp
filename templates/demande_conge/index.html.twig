@@ -1,0 +1,187 @@
+{#{% extends 'base.html.twig' %}#}
+
+{#{% block title %}DemandeConge index{% endblock %}#}
+
+{#{% block body %}#}
+{#    <h1>DemandeConge index</h1>#}
+
+{#    <table class="table">#}
+{#        <thead>#}
+{#            <tr>#}
+{#                <th>Id</th>#}
+{#                <th>DateDebut</th>#}
+{#                <th>NombreJour</th>#}
+{#                <th>DateReprise</th>#}
+{#                <th>DateFin</th>#}
+{#                <th>ApprobationChef</th>#}
+{#                <th>ApprobationDir</th>#}
+{#                <th>ApprobationAg</th>#}
+{#                <th>Etat</th>#}
+{#                <th>actions</th>#}
+{#            </tr>#}
+{#        </thead>#}
+{#        <tbody>#}
+{#        {% for demande_conge in demande_conges %}#}
+{#            <tr>#}
+{#                <td>{{ demande_conge.id }}</td>#}
+{#                <td>{{ demande_conge.dateDebut ? demande_conge.dateDebut|date('Y-m-d') : '' }}</td>#}
+{#                <td>{{ demande_conge.nombreJour }}</td>#}
+{#                <td>{{ demande_conge.dateReprise ? demande_conge.dateReprise|date('Y-m-d') : '' }}</td>#}
+{#                <td>{{ demande_conge.dateFin ? demande_conge.dateFin|date('Y-m-d') : '' }}</td>#}
+{#                <td>{{ demande_conge.approbationChef ? 'Yes' : 'No' }}</td>#}
+{#                <td>{{ demande_conge.approbationDir ? 'Yes' : 'No' }}</td>#}
+{#                <td>{{ demande_conge.approbationAg ? 'Yes' : 'No' }}</td>#}
+{#                <td>{{ demande_conge.etat }}</td>#}
+{#                <td>#}
+{#                    <a href="{{ path('demande_conge_show', {'id': demande_conge.id}) }}">show</a>#}
+{#                    <a href="{{ path('demande_conge_edit', {'id': demande_conge.id}) }}">edit</a>#}
+{#                </td>#}
+{#            </tr>#}
+{#        {% else %}#}
+{#            <tr>#}
+{#                <td colspan="10">no records found</td>#}
+{#            </tr>#}
+{#        {% endfor %}#}
+{#        </tbody>#}
+{#    </table>#}
+
+{#    <a href="{{ path('demande_conge_new') }}">Create new</a>#}
+{#{% endblock %}#}
+{% include "extension/sidebar.html.twig" %}
+{#<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">#}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Conge personnel</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                        <li class="breadcrumb-item active">Details Personnels</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title"><button class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal1">NOUVEAU CONGE</button></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+            <div class="col-md-9">
+                <div class="card card-primary">
+                    <div class="card-body p-0">
+                        <!-- THE CALENDAR -->
+                        <div id="calendrier"></div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<a id="back-to-top" href="#" class="btn btn-primary back-to-top" role="button" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+</a>
+
+<!-- /.content-wrapper -->
+
+{#                Model conge#}
+<div class="modal fade" id="myModal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Enregistrer un conge</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="form-group">
+                            {{ form_start(form) }}
+                            {{ form_widget(form) }}
+                            <button class="btn">{{ button_label|default('Save') }}</button>
+                            {{ form_end(form) }}
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                <button class="btn btn-primary btn-sm">VALIDER</button>
+            </div>
+
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+{#                Model conge#}
+
+<script>
+    window.onload = ()=>{
+        let calendarElt = document.querySelector("#calendrier")
+        let calendar = new FullCalendar.Calendar(calendarElt, {
+            // themeSystem: 'bootstrap',
+            initialView: 'dayGridMonth',
+            locale:'fr',
+            timeZone: 'UTC',
+            headerToolbar: {
+                start: 'prev, next, today',
+                center:'title',
+                end: 'dayGridMonth,timeGridWeek,timeGridDay'
+            },
+            events:
+
+                {{ donnees | raw }},
+
+                // {
+                //     start: '2020-11-19T10:00:00',
+                //     end: '2020-12-19T16:00:00',
+                //     eventColor: '#ff0000',
+                //     title:'Conference lualaba',
+                // },
+                // {
+                //     title          : 'All Day Event',
+                //     start: '2020-11-18T10:00:00',
+                //     backgroundColor: '#f56954', //red
+                //     borderColor    : '#f56954', //red
+                //     allDay         : true
+                // },
+                // {
+                //     title          : 'Long Event',
+                //     start: '2020-11-20T10:00:00',
+                //     backgroundColor: '#f39c12', //yellow
+                //     borderColor    : '#f39c12' //yellow
+                // },
+
+        })
+        calendar.render()
+    }
+
+</script>
+
+
+
+{% include "/extension/footer.html.twig" %}

@@ -19,10 +19,12 @@
             </div>
         </div><!-- /.container-fluid -->
     </section>
-
+    {{ form_start(form) }}
+    {{ form_row(form.nom) }}
+    <button class="btn btn-primary btn-sm" >RECHERCHE</button>
+    {{ form_end(form) }}
     <!-- Main content -->
     <section class="content">
-
         <!-- Default box -->
         <div class="card card-solid">
             <div class="card-body pb-0">

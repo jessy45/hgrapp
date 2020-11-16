@@ -11,27 +11,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb8b6ea8-7e0a-44a9-885f-1e09d16a2948" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201113095631.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Conge.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/CongeType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/CongeRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/personal/contact.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/personal/leaves.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/hgrproject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hgrproject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/DemandeCongeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/PersonalSearch.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/DemandeCongeType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/PersonalSearchType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/demande_conge/_delete_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/demande_conge/_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/demande_conge/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/demande_conge/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/demande_conge/new.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/demande_conge/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/dev/web_profiler.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/dev/web_profiler.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/PersonalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PersonalController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/PersonnelRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PersonnelRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/extension/sidebar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/extension/sidebar.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/personal/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/personal/create.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/personal/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/personal/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/personal/view-personal" beforeDir="false" afterPath="$PROJECT_DIR$/templates/personal/view-personal" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +36,9 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable path="composer" />
+    </execution>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -174,16 +172,23 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/patient" />
+      <recent name="$PROJECT_DIR$/templates" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Form" />
       <recent name="$PROJECT_DIR$/templates/profile" />
       <recent name="$PROJECT_DIR$/templates/personal" />
       <recent name="$PROJECT_DIR$/templates/security" />
       <recent name="$PROJECT_DIR$/templates/patient" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates/patient" />
-      <recent name="$PROJECT_DIR$/templates" />
-    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -230,7 +235,10 @@
       <workItem from="1605273598977" duration="4329000" />
       <workItem from="1605342532921" duration="1553000" />
       <workItem from="1605351914680" duration="2423000" />
-      <workItem from="1605374417901" duration="4586000" />
+      <workItem from="1605374417901" duration="6935000" />
+      <workItem from="1605517973178" duration="6550000" />
+      <workItem from="1605532792417" duration="10123000" />
+      <workItem from="1605548278396" duration="2310000" />
     </task>
     <servers />
   </component>
@@ -253,22 +261,26 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="365" y="200" width="626" height="398" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605175113380">
+    <state x="365" y="200" width="636" height="398" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605380311747">
       <screen x="0" y="28" width="1366" height="740" />
     </state>
-    <state x="365" y="200" width="626" height="398" key="#com.intellij.fileTypes.FileTypeChooser/0.28.1366.740@0.28.1366.740" timestamp="1605175113380" />
+    <state x="365" y="200" width="636" height="398" key="#com.intellij.fileTypes.FileTypeChooser/0.28.1366.740@0.28.1366.740" timestamp="1605380311747" />
     <state x="472" y="79" width="412" height="640" key="#com.intellij.ide.util.MemberChooser" timestamp="1604928488714">
       <screen x="0" y="28" width="1366" height="740" />
     </state>
     <state x="472" y="79" width="412" height="640" key="#com.intellij.ide.util.MemberChooser/0.28.1366.740@0.28.1366.740" timestamp="1604928488714" />
-    <state x="374" y="28" width="982" height="740" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604582421425">
+    <state x="374" y="28" width="982" height="740" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605382494887">
       <screen x="0" y="28" width="1366" height="740" />
     </state>
-    <state x="374" y="28" width="982" height="740" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.28.1366.740@0.28.1366.740" timestamp="1604582421425" />
+    <state x="374" y="28" width="982" height="740" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.28.1366.740@0.28.1366.740" timestamp="1605382494887" />
     <state x="416" y="156" width="524" height="486" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604581833188">
       <screen x="0" y="28" width="1366" height="740" />
     </state>
     <state x="416" y="156" width="524" height="486" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.28.1366.740@0.28.1366.740" timestamp="1604581833188" />
+    <state x="416" y="312" width="523" height="173" key="ComposerInitDialogKey" timestamp="1605538900572">
+      <screen x="0" y="28" width="1366" height="740" />
+    </state>
+    <state x="416" y="312" width="523" height="173" key="ComposerInitDialogKey/0.28.1366.740@0.28.1366.740" timestamp="1605538900572" />
     <state x="466" y="156" width="424" height="486" key="FileChooserDialogImpl" timestamp="1605000607071">
       <screen x="0" y="28" width="1366" height="740" />
     </state>

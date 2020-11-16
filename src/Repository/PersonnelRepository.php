@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\PersonalSearch;
 use App\Entity\Personnel;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\DBAL\Query\QueryBuilder;
@@ -53,10 +54,10 @@ class PersonnelRepository extends ServiceEntityRepository
     /**
      * @Return Query
     */
-    public function findVisibleQuery():Query
+    public function findVisibleQuery(PersonalSearch $search):Query
     {
-        return $this->findVisiblePersonal()
-                    ->getQuery();
+        $query = $this->findVisiblePersonal();
+        return $query->getQuery();
     }
 
     public function findVisiblePersonal(): \Doctrine\ORM\QueryBuilder

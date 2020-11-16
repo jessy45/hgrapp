@@ -2,13 +2,17 @@
 
 namespace App\Controller;
 
+
+use App\Entity\PersonalSearch;
 use App\Entity\Personnel;
 use App\Form\CongeType;
+use App\Form\PersonalSearchType;
 use App\Form\PersonnelType;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class PersonalController extends AbstractController
@@ -46,13 +50,23 @@ class PersonalController extends AbstractController
 
     /**
      * @Route("view/personal", name="view_personal")
+     * @return Response
     */
-    public function viewPersonal(Request $request,PaginatorInterface $paginator){
-        $formView = $this->getDoctrine()->getRepository(Personnel::class)->findVisibleQuery();
+    public function viewPersonal(Request $request,PaginatorInterface $paginator):Response
+    {
+
+        $search = new PersonalSearch();
+
+        $formView = $this->getDoctrine()->getRepository(Personnel::class)->findVisibleQuery($search);
         $personnels = $paginator->paginate($formView,$request->query->getInt('page', 1), 3);
 //        $personnels = $formView->findAll();
 
-        return $this->render('personal/view-personal', ['personnels'=>$personnels]);
+        $formSearch = $this->createForm(PersonalSearchType::class, $search);
+        $formSearch->handleRequest($request);
+
+        return $this->render('personal/view-personal',
+            ['personnels'=>$personnels, 'form'=>$formSearch->createView()
+            ]);
     }
 
     /**
